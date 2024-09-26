@@ -904,7 +904,7 @@ pub(crate) fn create_rustls_config(
             config
                 .dangerous()
                 .set_certificate_verifier(Arc::new(NoCertificateVerification {
-                    supported: rustls::crypto::ring::default_provider()
+                    supported: rustls::crypto::aws_lc_rs::default_provider()
                         .signature_verification_algorithms,
                 }));
 
